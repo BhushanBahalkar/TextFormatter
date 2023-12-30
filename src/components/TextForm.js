@@ -15,18 +15,37 @@ export default function TextForm(props) {
 
   const Capitalsentenceclick = () => {
     console.log("CapitalSentence was clicked" + text);
-    let newText = text.split('\n') // Split the text into paragraphs
-      .map(paragraph => { // Capitalize the first word of each paragraph
-      return paragraph.charAt(0).toUpperCase() + paragraph.slice(1);
+    let newText = text
+      .split("\n") // Split the text into paragraphs
+      .map((paragraph) => {
+        // Capitalize the first word of each paragraph
+        return paragraph.charAt(0).toUpperCase() + paragraph.slice(1);
       })
-      .join('\n');
+      .join("\n");
     setText(newText);
   };
 
   const CapitalWordclick = () => {
     console.log("Capitalwords was clicked" + text);
-    let newText = text.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+    let newText = text
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
     setText(newText);
+  };
+
+  const ExtraSpaces = () => {
+    console.log("Extra Spaces Removed" + text);
+    let newText = text.split(/[  ]+/);
+    setText(newText.join(" "));
+  };
+
+  const Copytoclipboard = () => {
+    
+    let text = document.getElementById("myBox")
+    console.log("Text copied to clip board" + text);
+    text.select();
+    navigator.clipboard.writeText(text.value);
   };
 
   const handleOnchange = (event) => {
@@ -34,49 +53,62 @@ export default function TextForm(props) {
     setText(event.target.value);
   };
 
-  return ( 
+  return (
     <>
-    <div className="container">
-      <h1>{props.heading}</h1> 
-      <div className="mb-3">
-        <label htmlFor="myBox"/>
-        <textarea
-          className="form-control"
-          id="myBox"
-          value={text}
-          onChange={handleOnchange}
-          rows="8"
-          placeholder="Enter Your Text Here"
-        ></textarea>
+      <div className="container">
+        <h1>{props.heading}</h1>
+        <div className="mb-3">
+          <label htmlFor="myBox" />
+          <textarea
+            className="form-control"
+            id="myBox"
+            value={text}
+            onChange={handleOnchange}
+            rows="8"
+            placeholder="Enter Your Text Here"
+          ></textarea>
+        </div>
+
+        <button className="btn btn-primary mx-2 my-1" onClick={Upclick}>
+          Convert to UPPERCASE
+        </button>
+
+        <button className="btn btn-primary mx-2 my-1" onClick={Lowclick}>
+          Convert to lowercase
+        </button>
+
+        <button
+          className="btn btn-primary mx-2 my-1"
+          onClick={Capitalsentenceclick}
+        >
+          Convert to Capitalize sentence
+        </button>
+
+        <button
+          className="btn btn-primary mx-2 my-1"
+          onClick={CapitalWordclick}
+        >
+          Convert to Capitalize Words
+        </button>
+        <button className="btn btn-primary mx-2 my-1" onClick={ExtraSpaces}>
+          Remove Extra Spaces
+        </button>
+
+        <button className="btn btn-primary mx-2 my-1" onClick={Copytoclipboard}>
+          Copy to Cipboard
+        </button>
       </div>
 
-      <button className="btn btn-primary mx-2 my-1" onClick={Upclick}>
-        Convert to UPPERCASE
-      </button>
-
-      <button className="btn btn-primary mx-2 my-1" onClick={Lowclick}>
-        Convert to lowercase
-      </button>
-
-      <button className="btn btn-primary mx-2 my-1" onClick={Capitalsentenceclick}>
-        Convert to Capitalize sentence
-      </button>
-
-      <button className="btn btn-primary mx-2 my-1" onClick={CapitalWordclick}>
-        Convert to Capitalize Words
-      </button>
-
-    </div>
-   
-   
-   
-    <div className="container my-3">
-    <h1>Your Text Summary</h1>
-    <p> {text.split(" ").length} Words, {text.length} Characters</p>
-    <p> {0.008 * text.split(" ").length} Minutes Read </p>
-    <h2>Preview</h2>
-    <p>{text}</p>
-    </div>
+      <div className="container my-3">
+        <h1>Your Text Summary</h1>
+        <p>
+          {" "}
+          {text.split(" ").length} Words, {text.length} Characters
+        </p>
+        <p> {0.008 * text.split(" ").length} Minutes Read </p>
+        <h2>Preview</h2>
+        <p>{text}</p>
+      </div>
     </>
   );
 }

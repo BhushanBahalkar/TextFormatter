@@ -1,0 +1,10 @@
+/* Navbar.css */
+
+.left-links {
+    margin-right: auto; /* This pushes the links to the left */
+  }
+  
+  .navbar-nav {
+    margin-left: 0; /* Ensure there is no left margin for the navbar links */
+  }
+  

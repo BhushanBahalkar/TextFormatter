@@ -1,0 +1,11 @@
+"Privacy is a top priority at textformatter.com. Our text formatter tools utilize JavaScript technology, ensuring that all of your text remains securely stored locally on your own devices. None of your text is transmitted over the Internet, guaranteeing that it is inaccessible to anyone outside of your machine.
+
+We are committed to safeguarding your anonymity. As part of our privacy measures, we neither create nor read cookies. Your data and usage remain confidential, providing you with a secure and private environment for your text formatting needs.
+
+At textformatter.com, we prioritize transparency and user privacy, aiming to enhance your experience while maintaining the highest standards of data protection. If you have any concerns or questions regarding your privacy on our platform, please don't hesitate to contact us."
+
+
+
+
+
+
