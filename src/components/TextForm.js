@@ -41,8 +41,7 @@ export default function TextForm(props) {
   };
 
   const Copytoclipboard = () => {
-    
-    let text = document.getElementById("myBox")
+    let text = document.getElementById("myBox");
     console.log("Text copied to clip board" + text);
     text.select();
     navigator.clipboard.writeText(text.value);
@@ -55,11 +54,19 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div className="container">
+      <div
+        className="container"
+        style={{ color: props.mode === "dark" ? "white" : "black" }}
+      >
         <h1>{props.heading}</h1>
+
         <div className="mb-3">
           <label htmlFor="myBox" />
           <textarea
+            style={{
+              backgroundColor: props.mode === "dark" ? "grey" : "white",
+              color: props.mode === "dark" ? "white" : "black",
+            }}
             className="form-control"
             id="myBox"
             value={text}
@@ -69,34 +76,18 @@ export default function TextForm(props) {
           ></textarea>
         </div>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={Upclick}>
-          Convert to UPPERCASE
-        </button>
+        <button className="btn btn-primary mx-2 my-1" onClick={Upclick}>Convert to UPPERCASE</button>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={Lowclick}>
-          Convert to lowercase
-        </button>
+        <button className="btn btn-primary mx-2 my-1" onClick={Lowclick}>Convert to lowercase</button>
 
-        <button
-          className="btn btn-primary mx-2 my-1"
-          onClick={Capitalsentenceclick}
-        >
-          Convert to Capitalize sentence
-        </button>
+        <button className="btn btn-primary mx-2 my-1" onClick={Capitalsentenceclick}>Convert to Capitalize sentence</button>
 
-        <button
-          className="btn btn-primary mx-2 my-1"
-          onClick={CapitalWordclick}
-        >
-          Convert to Capitalize Words
-        </button>
-        <button className="btn btn-primary mx-2 my-1" onClick={ExtraSpaces}>
-          Remove Extra Spaces
-        </button>
+        <button className="btn btn-primary mx-2 my-1" onClick={CapitalWordclick}>Convert to Capitalize Words</button>
+       
+        <button className="btn btn-primary mx-2 my-1" onClick={ExtraSpaces}>Remove Extra Spaces</button>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={Copytoclipboard}>
-          Copy to Cipboard
-        </button>
+        <button className="btn btn-primary mx-2 my-1" onClick={Copytoclipboard}>Copy to Clipboard</button>
+        
       </div>
 
       <div className="container my-3">
