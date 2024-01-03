@@ -64,7 +64,7 @@ export default function TextForm(props) {
           <label htmlFor="myBox" />
           <textarea
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "white",
+              backgroundColor: props.mode === "dark" ? "grey" : "gray", // Change "white" to "gray"
               color: props.mode === "dark" ? "white" : "black",
             }}
             className="form-control"
@@ -76,18 +76,35 @@ export default function TextForm(props) {
           ></textarea>
         </div>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={Upclick}>Convert to UPPERCASE</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={Upclick}>
+          Convert to UPPERCASE
+        </button>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={Lowclick}>Convert to lowercase</button>
+        <button className="btn btn-primary mx-2 my-1" onClick={Lowclick}>
+          Convert to lowercase
+        </button>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={Capitalsentenceclick}>Convert to Capitalize sentence</button>
+        <button
+          className="btn btn-primary mx-2 my-1"
+          onClick={Capitalsentenceclick}
+        >
+          Convert to Capitalize sentence
+        </button>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={CapitalWordclick}>Convert to Capitalize Words</button>
-       
-        <button className="btn btn-primary mx-2 my-1" onClick={ExtraSpaces}>Remove Extra Spaces</button>
+        <button
+          className="btn btn-primary mx-2 my-1"
+          onClick={CapitalWordclick}
+        >
+          Convert to Capitalize Words
+        </button>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={Copytoclipboard}>Copy to Clipboard</button>
-        
+        <button className="btn btn-primary mx-2 my-1" onClick={ExtraSpaces}>
+          Remove Extra Spaces
+        </button>
+
+        <button className="btn btn-primary mx-2 my-1" onClick={Copytoclipboard}>
+          Copy to Clipboard
+        </button>
       </div>
 
       <div className="container my-3">
