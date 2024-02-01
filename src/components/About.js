@@ -153,7 +153,7 @@ export default function About() {
               If you prefer reaching out through email, you can send your
               inquiries to{" "}
               <a
-                href="mailto:bhudhsnbshslksr189@email.com?subject=Enter your subject here &body= type your quries here and tell us what we need to improve "
+                href="mailto:bhushanbahalkar189@email.com?subject=Enter your subject here &body= type your quries here and tell us what we need to improve "
               >
                 {" "}
                 Send mail

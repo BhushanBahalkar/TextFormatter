@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import React, { useState } from 'react';
 
+
  
 
 function App() {
@@ -13,11 +14,11 @@ function App() {
     const toggleMode = ()=>{
        if(mode === 'light'){
         setMode ('dark');  
-        document.body.style.backgroundColor = '#212529';
+        document.body.style.backgroundColor = '#2F1B41'; //Main Body BG in Darkmode
        }
        else{
         setMode ('light');
-        document.body.style.backgroundColor = 'white';
+        document.body.style.backgroundColor = '#C4DFDF'; //Main Body BG in Lightmode
        }
     }
 

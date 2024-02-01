@@ -56,7 +56,7 @@ export default function TextForm(props) {
     <>
       <div
         className="container"
-        style={{ color: props.mode === "dark" ? "white" : "black" }}
+        style={{ color: props.mode === "dark" ? "white" : "#87556F" }}   //Title color fixed not changing with color mode
       >
         <h1>{props.heading}</h1>
 
@@ -64,8 +64,8 @@ export default function TextForm(props) {
           <label htmlFor="myBox" />
           <textarea
             style={{
-              backgroundColor: props.mode === "dark" ? "grey" : "gray", // Change "white" to "gray"
-              color: props.mode === "dark" ? "white" : "black",
+              backgroundColor: props.mode === "dark" ? "#414141" : "#4B5D67",   //text input field bg
+              color: props.mode === "dark" ? "white" : "#322F3D",            //Input text color
             }}
             className="form-control"
             id="myBox"
@@ -107,7 +107,10 @@ export default function TextForm(props) {
         </button>
       </div>
 
-      <div className="container my-3">
+      <div className="container my-3" style={{
+              
+              color: props.mode === "dark" ? "white" : "#87556F",   //Text Summary text color
+            }}>
         <h1>Your Text Summary</h1>
         <p>
           {" "}
@@ -115,7 +118,9 @@ export default function TextForm(props) {
         </p>
         <p> {0.008 * text.split(" ").length} Minutes Read </p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <div style={{backgroundColor: props.mode === "dark" ? "grey" : "#4B5D6"}   //Preview field text color
+      }>  
+        {text}</div>
       </div>
     </>
   );
