@@ -1,7 +1,9 @@
 /* Button Styles */
 .btn-primary {
     background-color: #5783db; /* Primary button color */
-    color: #fff; /* Text color for the primary button */
+    color: #0eb057; /* Text color for the primary button */
+    border-radius: 5px;
+
   }
   
  

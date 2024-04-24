@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+
+
 export default function TextForm(props) {
   const [text, setText] = useState("");
   const Upclick = () => {
@@ -76,7 +78,7 @@ export default function TextForm(props) {
           ></textarea>
         </div>
 
-        <button className="btn btn-primary mx-2 my-1" onClick={Upclick}>
+        <button className="btn btn-primary mx-2 my-1" onClick={Upclick}  >
           Convert to UPPERCASE
         </button>
 

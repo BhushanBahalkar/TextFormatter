@@ -1,12 +1,12 @@
 import "./App.css";
-// import Aboutt from "./components/About";
+import Aboutt from "./components/About";
 import Navbar from "./components/Navbar";
 
 import TextForm from "./components/TextForm";
 import React, { useState } from 'react';
 
 
- 
+
 
 function App() {
     const [mode, setMode]  = useState('light'); 
@@ -28,7 +28,7 @@ function App() {
 
       <div className="container my-4">
         <TextForm heading="Enter the text to analyze below" />
-    {/* <Aboutt/>  */}
+    <Aboutt/> 
       </div>
     </>
   );
